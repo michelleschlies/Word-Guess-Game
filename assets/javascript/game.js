@@ -29,23 +29,24 @@ var setup = function(){
 window.onload = function(){
     setup();
 }
-var UsetLetter = "";
+//var UserLetter = "";
 document.onkeyup = function(event) {
         var userLetter = event.key;
         console.log(userLetter);
-            for (var c = 0; c< answer.length; c++){
+            for (var c = 0; c< answer.length; c++)
+            {
                 console.log(letters[c]);
-                if (userLetter == letters[c]);
+                if (userLetter === letters[c]);
                 {
                     display[c] = userLetter;
                     win--;
+                }
+                    output = output + display[c] + " ";
             }
-            output = output + display[c] + " ";}
-
             document.getElementById("wordgoeshere").innerHTML = output;
             output="";
             triesLeft--;
-            console.log(triesLeft);
+            console.log("Tries left: "+triesLeft);
 
             if (win <1){
                 document.getElementById("Game-Status").innerHTML = "You Win!";
@@ -56,5 +57,4 @@ document.onkeyup = function(event) {
             else{
                 document.getElementById("Game-Status").innerHTML = "You have " + triesLeft + " tries left!";
             }
-            }
-    
+}          
